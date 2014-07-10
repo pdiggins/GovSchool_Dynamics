@@ -1,7 +1,10 @@
 RANGES FOR INITIAL VALUES
 
+radius range for particles: 1E6 - 7.5E7
 
-mass range for particles: 3E23 - 2E27
+mass range for particles: 2E22 - 2E27
+
+radius range center of system: 4E5 - 5E8
 
 mass range center of system: 1.5E30 - 2.5E30
 
