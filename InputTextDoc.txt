@@ -1,0 +1,5 @@
+#radius(m) mass(kg) startingPostition(m) startingVelocity(m/s)
+#Sun
+695,500,000 1.9891E30 startingX startingV
+#Earth
+6,378,100 5.97219E24 startingX startingV
