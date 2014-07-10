@@ -1,20 +1,15 @@
 from visual import*
 from random import*
-
-"""sun = sphere(pos=(1,0,0),radius = 1E10, color = color.yellow)
-earth = sphere(make_trail=true,pos=(1.5E11,0,0), radius = 5E9, color =
-color.green)
-
-deltaT = 1000;
-G = 6.67E-11;
-mEarth = 1.0E30
-mSun = 2.0E30
-
-vVec = vector((0,30000,0))
-time = 0
-dVec = vector((1.5E11,0,0))"""
+from particleClass import particleClass
 
 particleList = []
+time = 0
+deltaT = 100
+G = 6.67E-11
+
+def createNewParticle(radius, mParticle, pos, velocity):
+    newParticle = particleClass(radius, mParticle, pos, velocity)
+    return newParticle
 
 def createRandomParticles(radiusRangeStart,radiusRangeEnd, mParticleRangeStart, mParticleRangeEnd, posXStart,posXEnd,posYStart,posYEnd,posZStart,posZEnd,velocityXStart,velocityXEnd,velocityYStart,velocityYEnd,velocityZStart,velocityZEnd,numParticles):
     for x in range(0,numParticles):
@@ -37,22 +32,32 @@ def createRandomParticles(radiusRangeStart,radiusRangeEnd, mParticleRangeStart, 
         tempParticle = createNewParticle(newRadius,newMass,newPosVector,newVelocityVector)
         particleList.append(tempParticle)
 
-def createNewParticle(radius, mParticle, pos, velocity):
 
 
-def getGravitationalForce(G,m1,m2,rHat):
 
+
+def eulerIntegration(forceVector):
+
+createRandomParticles()
+
+def getGravitationalForce(particle1, particle2):
+    r = particle2.particle_pos - particle1.particle_pos
+    accelerationParticle1 = ( G * particle2.particle_mass * norm(r) ) / mag2(r)
+    return accelerationParticle1
 
 while(True):
-    rate(1E20)
-    """fVec = getForce(G,mEarth,mSun,mag(earth.pos),norm(earth.pos))
-    aVec = fVec/mEarth
-
-    vVec += (deltaT*aVec)
-    earth.pos += (deltaT*vVec)"""
-    getGravitationalForce();
-    
-    
+    for i in range(0,len(particleList)):
+        currentForceVector = vector((0,0,0))
+        newPos = vector((0))
+        for j in range (0,len(particleList)):
+            force = vector((0,0,0))
+            if(!(i==j)):
+                force = getGravitationalForce(particleList[i],particleList[j])
+            currentForceVector+=gForce
+        newPos = eulerIntegration(currentForceVector)
+        tempParticle = particleList[i]
+        tempParticle.pos = newPos
+        particleList[i] = tempParticle
     time = time+deltaT
 
 
