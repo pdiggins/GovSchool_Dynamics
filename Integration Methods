@@ -1,0 +1,20 @@
+
+"""inside class"""
+
+p(x).velocity = p(x)acceleration * deltat + p(x).velocity
+p(x).position = p(x)velocity * deltat + p(x).position
+
+
+
+kv1 = p(x).acceleration * deltat + p(x).velocity
+kv2 = p(x).acceleration + deltat / 2 * kv1
+kv3 = p(x).acceleration + deltat / 2 * kv2
+kv4 = p(x).acceleration + deltat * kv3
+p(x).velocity = p(x).velocity + deltat / 6 * (kv1 + 2*kv2 + 2*kv3 + kv4)
+
+kp1 = p(x).velocity * deltat + p(x).position
+kp2 = p(x).velocity + deltat / 2 * kp1
+kp3 = p(x).velocity + deltat / 2 * kp2
+kp4 = p(x).acceleration + deltat * kp3
+p(x).position = p(x).position + deltat / 6 * (kp1 + 2*kp2 + 2*kp3 + kp4)
+                
