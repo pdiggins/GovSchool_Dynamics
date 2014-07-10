@@ -1,0 +1,10 @@
+RANGES FOR INITIAL VALUES
+
+
+mass range for particles: 3E23 - 2E27
+
+mass range center of system: 1.5E30 - 2.5E30
+
+velocity range for particles: 5E4 - 13E4
+
+magnitude range of position vector: 6E10 - 6E12
