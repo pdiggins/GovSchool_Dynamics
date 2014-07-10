@@ -1,0 +1,6 @@
+from visual import*
+
+getGravitationalForce(particle1, particle2):
+    r = particle2.particle_pos - particle1.particle_pos 
+    accelerationParticle1 = ( G * particle2.particle_mass * norm(r) ) / mag2(r)
+    return accelerationParticle1
