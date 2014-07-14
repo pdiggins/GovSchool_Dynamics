@@ -3,9 +3,12 @@ from visual import*
 class particleClass(sphere):
     velocity = vector(0,0,0)
     mass = 0
+    trail = curve()
     def add_Particle(self, mParticle, input_Velocity):
         self.velocity = input_Velocity
         self.mass = mParticle
+        print "color:"+str(self.color)
+        
         
     """particle_radius = 0
     particle_mass = 0
