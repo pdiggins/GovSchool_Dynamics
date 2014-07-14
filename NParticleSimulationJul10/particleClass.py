@@ -1,7 +1,13 @@
 from visual import*
 
-class particleClass:
-    particle_radius = 0
+class particleClass(sphere):
+    velocity = vector(0,0,0)
+    mass = 0
+    def add_Particle(self, mParticle, input_Velocity):
+        self.velocity = input_Velocity
+        self.mass = mParticle
+        
+    """particle_radius = 0
     particle_mass = 0
     particle_pos = vector((0,0,0))
     particle_velocity = vector((0,0,0))
@@ -14,5 +20,5 @@ class particleClass:
     def updatePosition(mParticle, pos, velocity, color):
         particle_mass = mParticle
         particle_pos = pos
-        particle_velocity = velocity
+        particle_velocity = velocity"""
         
