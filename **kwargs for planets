@@ -1,0 +1,25 @@
+class Particle(object):
+    def_init_(self,pos, velocity, **kwargs):
+        self.velocity=velocity
+        self.pos=pos
+        for key in kwargs:
+            setattr(self,key,kwargs[key])
+
+my_args={"pos":(1.5E11,0,0),"velocity":(0,3.0E4,0), "mass":5.9E24, "name": "Earth")
+Sun=Particle("pos":(0,0,0),"velocity":(0,0,0), "mass":2.0E30, "name": "Sun")
+Mercury=Particle("pos":(5.91E9,0,0), "velocity": (0,48.9E3,0), "mass":328.5E21, "name":"Mercury")
+Venus=Particle("pos":(1.08E11,0,0),"velocity":(0,35.02E3,0), "mass":4.8676E24,"name":"Venus")
+Mars=Particle("pos":(2.279E11,0,0),"velocity":(0,24.07E3,0),"mass":0.64174E24, "name":"Mars")
+Jupiter=Particle("pos":(7.785E11,0,0),"velocity":(0,13.06E3,0),"mass":1898.3E24,"name":"Jupiter")
+Saturn=Particle("pos":(8.907E11,0,0),"velocity":(0,9.68E3,0),"mass":2.877E12,"name":"Saturn")
+Uranus=Particle("pos":(2.877E12,0,0),"velocity":(0,6.80E3,0),"mass":86.81E24,"name":"Uranus")
+Neptune=Particle("pos":(4.503E12,0,0),"velocity":(0,5.43E3,0),"mass":102.4E24,"name":"Neptune")
+Pluto=Particle("pos":(4.44E12,0,0),"velocity":(0,4.67E3,0),"mass":1.31E22,"name":"Pluto")
+
+                 
+                
+                
+                
+    
+            
+                

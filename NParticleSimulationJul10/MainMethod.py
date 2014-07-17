@@ -7,16 +7,17 @@ time = 0
 deltat = 100000
 G = 6.67E-11
 
-def createNewParticle(input_radius, input_mParticle, input_pos, input_velocity):
-	newParticle = particleClass(radius=input_radius, pos = input_pos, color = (random.uniform(0,1),random.uniform(0,1),random.uniform(0,1)))
+def createNewParticle(pos, velocity, **kwargs):
+	newParticle = particleClass(radius=kwargs[radius], pos = kwargs[pos], color = (random.uniform(0,1),random.uniform(0,1),random.uniform(0,1)))
 	newParticle.trail = curve(color=newParticle.color)
-	newParticle.add_Particle(input_mParticle,vector(input_velocity))
+	newParticle.add_Particle(**kwargs)
 	#newParticle = particleClass(radius/1.0E30, mParticle, pos, velocity,(1,0,0))
 	#print "newParticle"+str(newParticle.radius)
 	return newParticle
 
-def createDefinedParticle(radius, mParticle, pos, velocity):
-	tempParticle = createNewParticle(radius,mParticle,pos,velocity)
+def createDefinedParticle(pos, velocity, **kwargs):
+        
+	tempParticle = createNewParticle(pos, velocity, **kwargs)
 	#print "particle list size:"+str(len(particleList))
 	particleList.append(tempParticle)
 	#print "particle list size after:"+str(len(particleList))
