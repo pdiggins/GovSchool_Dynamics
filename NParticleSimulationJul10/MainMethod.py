@@ -189,5 +189,22 @@ while(True):
 	time = time+deltat
 
 
+def get_acceleration(i, particleList):
+        acceleration=(0,0,0)
+        j=0
+        while j<len(particleList):
+                if i != j:        
+                        acceleration=acceleration + getGravitationalAcceleration(particleList[i], particleList[j])
+                j=j+1
+        return acceleration
 
 
+def velocityVerlet(particleList):
+        for i in range(0,len(particleList))
+
+                acceleration = get_acceleration(i, particleList)
+                velocity = particle[i].velocity +0.5*acceleration*deltat
+                particle[i].pos = particle[i].pos + velocity*deltat + 0.5*acceleration*deltat*deltat
+                acceleration = get_acceleration(i, particleList)
+                particle[i].velocity = velocity + 0.5*acceleration*deltat
+        return particleList
