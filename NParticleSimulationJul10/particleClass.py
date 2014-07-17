@@ -4,16 +4,8 @@ class particleClass(sphere):
     velocity = vector(0,0,0)
     mass = 0
     trail = curve()
-    def add_Particle(self, pos, velocity, **kwargs):
-        self.velocity = velocity
-        self.pos=pos
-        for key in kwargs:
-            setattr(self,key,kwargs[key])
-
-my_args={"pos":(1.5E11,0,0),"velocity":)0,3.0E4,0),"mass":5.9E24,"name":"Earth")
-Sun=Particle("pos":(0,0,0),"velocity":(0,0,0),"mass":2.0E30,"name":"Sun")
-
-        
+    def add_Particle(self, mParticle, input_Velocity):
+        self.velocity = input_Velocity
         self.mass = mParticle
         print "color:"+str(self.color)
         
