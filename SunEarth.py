@@ -23,8 +23,9 @@ while True:
     sun.velocity = sun.velocity + sun.acceleration*deltat
     sun.pos = sun.pos + sun.velocity*deltat
 
-    print "earth position:"+str(earth.pos)
-    print "acceleration"+str(earth.acceleration)
+    print "earth acceleration:"+str(earth.acceleration)+"earth velocity"+str(earth.velocity)+"earth position"+str(earth.pos)
+    #print "earth position:"+str(earth.pos)
+    #print "acceleration"+str(earth.acceleration)
     """comet.acceleration = (-6.67E-11*2.0E30/ mag(comet.pos-sun.pos)**2 * norm(comet.pos-sun.pos))
     comet.velocity = comet.velocity + comet.acceleration*deltat
     comet.pos = comet.pos + comet.velocity*deltat
