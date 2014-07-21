@@ -5,7 +5,7 @@ sun.velocity=vector(0,0,0)
 earth=sphere(pos=vector(1.5E11,0,0),radius=6.3781E9,color=color.blue)
 earth.mass=5.9E24
 earth.velocity=vector(0,3.0E4,0)
-deltat=1000
+deltat=10000
 t=0
 
 earth.trail=curve(color=color.green)
